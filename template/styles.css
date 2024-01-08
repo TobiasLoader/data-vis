@@ -1,0 +1,19 @@
+html {
+  margin:0;
+  padding:0;
+  width:100%;
+}
+
+body {
+  margin:20px;
+  width: 100%;
+}
+
+h1 {
+  font-family: "JetBrains Mono";
+}
+
+svg {
+  margin: auto;
+  box-shadow: rgba(0,0,0,0.1) 0 0 30px 10px;
+}
