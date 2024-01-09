@@ -1,0 +1,16 @@
+Run "./build.sh" to build a new d3.js project.
+- The script asks for a title, description and d3.js script file (in /d3 folder).
+
+Run "./launch.sh [name]" to launch the [name] d3.js project.
+- Supply the name of the project as the parameter to the command.
+
+Run "./delete.sh [name]" to delete the [name] d3.js project.
+- Supply the name of the project as the parameter to the command.
+
+---
+
+On my local machine I have set up aliases (see 'zshrc_file') for build, launch and delete, so I only need to run:
+
+  build
+  launch [name]
+  delete [name]

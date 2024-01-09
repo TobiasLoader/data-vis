@@ -1,0 +1,19 @@
+# to create local aliases for bash commands
+
+local_alias(){
+  local aliasName=$1
+  local directoryPath=$2
+  if [[ "$(pwd)" = $directoryPath ]]; then
+    alias $aliasName="./$aliasName.sh"
+  else
+    unalias $aliasName 2> /dev/null
+  fi
+}
+
+function precmd() {
+  # creates aliases to build, launch and delete only in the 'data-vis' directory
+  local dataVisDir="/path/to/data-vis"
+  local_alias build $dataVisDir
+  local_alias launch $dataVisDir
+  local_alias delete $dataVisDir
+}
