@@ -7,29 +7,53 @@ const marginBottom = 30;
 const marginLeft = 40;
 
 // Declare the x (horizontal position) scale.
-const x = d3.scaleUtc()
+const x1 = d3.scaleUtc()
     .domain([new Date("2023-01-01"), new Date("2024-01-01")])
     .range([marginLeft, width - marginRight]);
 
 // Declare the y (vertical position) scale.
-const y = d3.scaleLinear()
+const y1 = d3.scaleLinear()
     .domain([0, 100])
     .range([height - marginBottom, marginTop]);
 
-// Create the SVG container.
-const svg = d3.create("svg")
+// Declare the x (horizontal position) scale.
+const x2 = d3.scaleLinear()
+    .domain([0, 100])
+    .range([marginLeft, width - marginRight]);
+
+// Declare the y (vertical position) scale.
+const y2 = d3.scaleUtc()
+    .domain([new Date("2023-01-01"), new Date("2024-01-01")])
+    .range([height - marginBottom, marginTop]);
+
+const svg1 = d3.create("svg")
+    .attr("width", width)
+    .attr("height", height);
+    
+const svg2 = d3.create("svg")
     .attr("width", width)
     .attr("height", height);
 
 // Add the x-axis.
-svg.append("g")
+svg1.append("g")
     .attr("transform", `translate(0,${height - marginBottom})`)
-    .call(d3.axisBottom(x));
+    .call(d3.axisBottom(x1));
 
 // Add the y-axis.
-svg.append("g")
+svg1.append("g")
     .attr("transform", `translate(${marginLeft},0)`)
-    .call(d3.axisLeft(y));
+    .call(d3.axisLeft(y1));
+
+// Add the x-axis.
+svg2.append("g")
+    .attr("transform", `translate(0,${height - marginBottom})`)
+    .call(d3.axisBottom(x2));
+
+// Add the y-axis.
+svg2.append("g")
+    .attr("transform", `translate(${marginLeft},0)`)
+    .call(d3.axisLeft(y2));
+
 
 // Add a data point
 const dataPoints = [
@@ -46,13 +70,26 @@ const dataPoints = [
    { x: new Date("2023-11-15"), y: 45 },
    { x: new Date("2023-12-15"), y: 50 },
 ];
-svg.selectAll("circle")
+
+svg1.selectAll("circle")
    .data(dataPoints)
    .join("circle")
-   .attr("cx", d => x(d.x))
-   .attr("cy", d => y(d.y))
+   .attr("cx", d => x1(d.x))
+   .attr("cy", d => y1(d.y))
    .attr("r", 5)
    .attr("fill", "rgb(45, 166, 128)");  // same as --pri-col in CSS
 
+svg2.selectAll("circle")
+    .data(dataPoints)
+    .join("circle")
+    .attr("cx", d => x2(d.y))
+    .attr("cy", d => y2(d.x))
+    .attr("r", 5)
+    .attr("fill", "rgb(45, 166, 128)");  // same as --pri-col in CSS
+
 // Append the SVG element.
-d3.select("#chart-container").append(() => svg.node());
+d3.select("#chart-container").append('div').attr('id', 'svg-container1');
+d3.select("#svg-container1").append(() => svg1.node());
+
+d3.select("#chart-container").append('div').attr('id', 'svg-container2');
+d3.select("#svg-container2").append(() => svg2.node());

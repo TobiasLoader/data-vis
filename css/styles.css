@@ -6,7 +6,7 @@ html {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 body {
@@ -15,7 +15,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'JetBrains Mono', monospace;
-  height: 100%;
+  min-height: 100vh;
   background: linear-gradient(180deg, rgb(255,255,255) 50%, var(--pri-col) 400%);
 }
 
@@ -46,16 +46,18 @@ p {
 }
 
 #chart-container {
-  flex:1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+  margin: 20px auto;
+  justify-content: center;
 }
 
 svg {
   box-shadow: rgba(0,0,0,0.15) 0 0 30px 10px;
-  position: absolute;
-  left:50%;
-  top:50%;
-  transform: translate(-50%,-50%);
   background: white;
+  margin: 20px;
 }
 
 #footer {
