@@ -1,8 +1,12 @@
 # data-vis
 
-Builds local D3.js projects.
+Create and Deploy local D3.js projects.
 
 > Note: D3.js JS files reside in the `/d3` folder.
+
+I built this before taking the Data Visualisation course at Oxford, to be able to quickly deploy and organise D3.js projects.
+
+---
 
 ### Commands
 
@@ -24,6 +28,8 @@ Builds local D3.js projects.
 ```zsh
 ./shell/shutdown.sh
 ```
+
+See [local aliases](#local-aliases) section below for a more streamlined approach.
 
 ---
 
