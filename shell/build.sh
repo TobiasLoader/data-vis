@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Ask for the project name
 read -p "Enter project name: " projectName

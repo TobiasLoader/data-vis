@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/zsh
+
+PORT=8000
 
 case $# in
   0)
@@ -11,9 +13,15 @@ case $# in
     done
     ;;
   1)
-    open "builds/$1/index.html"
+    if lsof -i :$PORT > /dev/null 2>&1; then
+      open "http://localhost:8000/builds/$1"
+    else
+      echo "[ launching server... ]"
+      python -m SimpleHTTPServer & sleep 2; open "http://localhost:8000/builds/$1"
+    fi
     if [ $? -eq 0 ]; then
       echo "Project '$1' has been launched successfully."
+      echo "--"
     else
       echo "Failed to launch project '$1'."
     fi

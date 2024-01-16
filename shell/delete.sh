@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 read -p "Are you sure you wish to delete '$1' (Y/n): " check
 

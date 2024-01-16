@@ -66,7 +66,7 @@ const dataPoints = [
    { x: new Date("2023-07-15"), y: 25 },
    { x: new Date("2023-08-15"), y: 40 },
    { x: new Date("2023-09-15"), y: 35 },
-   { x: new Date("2023-10-15"), y: 30 },
+   { x: new Date("2023-10-15"), y: 35 },
    { x: new Date("2023-11-15"), y: 45 },
    { x: new Date("2023-12-15"), y: 50 },
 ];
