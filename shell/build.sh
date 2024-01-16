@@ -1,13 +1,16 @@
 #!/bin/zsh
 
 # Ask for the project name
-read -p "Enter project name: " projectName
+echo -n "Enter project name: "
+read projectName
 
 # Ask for the project description
-read -p "Enter project description: " projectDescription
+echo -n "Enter project description: "
+read projectDescription
 
 # Ask for the JavaScript file name
-read -p "Enter JS file name (with .js extension): " jsFileName
+echo -n "Enter JS file name (with .js extension): "
+read jsFileName
 
 # Create a new directory for the project
 mkdir "builds/$projectName"

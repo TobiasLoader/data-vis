@@ -1,6 +1,7 @@
 #!/bin/zsh
 
-read -p "Are you sure you wish to delete '$1' (Y/n): " check
+echo -n "Are you sure you wish to delete '$1' (Y/n): "
+read check
 
 if [ $check = "Y" ]; then
   rm -r "builds/$1"
