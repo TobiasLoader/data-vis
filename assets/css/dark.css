@@ -1,0 +1,18 @@
+html {
+  background: rgb(30, 30, 30);
+}
+
+body {
+  background: linear-gradient(180deg, rgb(30, 30, 30) 50%, rgba(var(--pri-col), 0.1) 100%);
+  color: white;
+}
+
+#desc {
+  color: rgb(155,155,155);
+}
+
+svg {
+  fill: white;
+  box-shadow: rgba(0,0,0, 0.1) 0 0 20px 10px;
+  background: rgb(20,20,20);
+}

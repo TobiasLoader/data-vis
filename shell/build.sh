@@ -19,18 +19,20 @@ touch "builds/$projectName/custom.css"
 
 # Create an HTML file
 cat <<EOF > "builds/$projectName/index.html"
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>$projectName</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link id="dark-css" disabled="true" rel="stylesheet" href="../../assets/css/dark.css">
     <link rel="stylesheet" href="custom.css">
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
   </head>
   <body>
+    <div id="dark-toggle">
+    </div>
     <div id="title-container">
       <h1 id="title">$projectName</h1>
       <p id="desc">$projectDescription</p>
@@ -40,6 +42,7 @@ cat <<EOF > "builds/$projectName/index.html"
       <p id="footer">Toby Loader – D3.js $projectName</p>
     </div>
     <script src="../../d3/$jsFileName"></script>
+    <script src="../../assets/js/scripts.js"></script>
   </body>
 </html>
 EOF
