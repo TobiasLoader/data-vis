@@ -88,9 +88,25 @@ p {
 }
 
 svg {
-  box-shadow: rgba(0,0,0,0.1) 0 0 30px 10px;
+  box-shadow: rgba(0,0,0,0.1) 0 0 20px 5px;
   background: white;
   margin: 20px 0;
+}
+
+svg text {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+svg .axis-label {
+  fill: black;
+  font-size:14px;
+}
+
+.separator {
+  height: 0;
+  border-top: rgb(80,80,80) 1px dashed;
+  margin: 40px auto;
+  width: 100%;
 }
 
 #footer {

@@ -88,8 +88,20 @@ svg2.selectAll("circle")
     .attr("fill", "rgb(45, 166, 128)");  // same as --pri-col in CSS
 
 // Append the SVG element.
-d3.select("#chart-container").append('div').attr('id', 'svg-container1');
+d3.select("#chart-container").append('div')
+   .attr('id', 'svg-container1')
+   .attr('class', 'chart');
+d3.select("#svg-container1").append('div').attr('class', 'chart-label');
+d3.select("#svg-container1 .chart-label").append("h3").text("Chart title");
+d3.select("#svg-container1 .chart-label").append("p").text("Chart description");
 d3.select("#svg-container1").append(() => svg1.node());
 
-d3.select("#chart-container").append('div').attr('id', 'svg-container2');
+d3.select("#chart-container").append('div').attr('class', 'separator');
+
+d3.select("#chart-container").append('div')
+   .attr('id', 'svg-container2')
+   .attr('class', 'chart');
+d3.select("#svg-container2").append('div').attr('class', 'chart-label');
+d3.select("#svg-container2 .chart-label").append("h3").text("Chart title");
+d3.select("#svg-container2 .chart-label").append("p").text("Chart description");
 d3.select("#svg-container2").append(() => svg2.node());

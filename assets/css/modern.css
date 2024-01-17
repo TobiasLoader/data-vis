@@ -1,0 +1,23 @@
+.chart {
+  box-shadow: rgba(0,0,0,0.1) 0 0 20px 5px;
+  background: white;
+  margin: 20px 0;
+  border-radius: 15px;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.chart-label {
+  padding: 30px;
+  margin: 0;
+  box-shadow: rgba(0,0,0,0.1) 0 10px 10px -5px;
+}
+
+svg {
+  box-shadow: none;
+  background: none;
+  margin: 10px;
+}
+
+.separator {
+  display: none;
+}

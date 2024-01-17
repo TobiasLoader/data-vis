@@ -12,6 +12,17 @@ read projectDescription
 echo -n "Enter JS file name (with .js extension): "
 read jsFileName
 
+# Ask for the theme choice
+echo -n "Enter theme choice (traditional/modern): "
+read themeChoice
+
+modernCSSLink=""
+modernDarkCSSLink=""
+if [ $themeChoice = "modern" ]; then
+  modernCSSLink="<link rel='stylesheet' href='../../assets/css/modern.css'>"
+  modernDarkCSSLink="<link id='modern-dark-css' disabled='true' rel='stylesheet' href='../../assets/css/modern-dark.css'>"
+fi
+
 # Create a new directory for the project
 mkdir "builds/$projectName"
 
@@ -26,7 +37,9 @@ cat <<EOF > "builds/$projectName/index.html"
     <title>$projectName</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/styles.css">
+    $modernCSSLink
     <link id="dark-css" disabled="true" rel="stylesheet" href="../../assets/css/dark.css">
+    $modernDarkCSSLink
     <link rel="stylesheet" href="custom.css">
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
   </head>

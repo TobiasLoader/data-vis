@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background: linear-gradient(180deg, rgb(30, 30, 30) 50%, rgba(var(--pri-col), 0.1) 100%);
+  background: linear-gradient(180deg, rgb(30, 30, 30) 50%, rgba(var(--pri-col), 0.05) 100%);
   color: white;
 }
 
@@ -13,6 +13,10 @@ body {
 
 svg {
   fill: white;
-  box-shadow: rgba(0,0,0, 0.1) 0 0 20px 10px;
-  background: rgb(20,20,20);
+  box-shadow: rgba(0,0,0,0.1) 0 0 20px 10px;
+  background: rgb(23,23,23);
+}
+
+.separator {
+  border-top: rgb(80, 80, 80) 1px dashed;
 }
