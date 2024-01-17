@@ -31,7 +31,8 @@ cat <<EOF > "builds/$projectName/index.html"
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
   </head>
   <body>
-    <div id="dark-toggle">
+    <div id="dark-toggle-container">
+      <img id="dark-toggle-img" alt="light/dark toggle" src="../../assets/imgs/dark-mode.svg"/>
     </div>
     <div id="title-container">
       <h1 id="title">$projectName</h1>

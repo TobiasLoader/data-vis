@@ -1,15 +1,18 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>template</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link id="dark-css" disabled="true" rel="stylesheet" href="../../assets/css/dark.css">
     <link rel="stylesheet" href="custom.css">
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
   </head>
   <body>
+    <div id="dark-toggle-container">
+      <img id="dark-toggle-img" alt="light/dark toggle" src="../../assets/imgs/dark-mode.svg"/>
+    </div>
     <div id="title-container">
       <h1 id="title">template</h1>
       <p id="desc">Here lies info about the graphs.</p>
@@ -19,5 +22,6 @@
       <p id="footer">Toby Loader – D3.js template</p>
     </div>
     <script src="../../d3/template.js"></script>
+    <script src="../../assets/js/scripts.js"></script>
   </body>
 </html>
