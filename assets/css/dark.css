@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background: linear-gradient(180deg, rgb(30, 30, 30) 50%, rgba(var(--pri-col), 0.05) 100%);
+  background: repeating-linear-gradient(180deg, rgb(30,30,30) 0,  rgb(30,30,30) 30vh, rgba(var(--pri-col), 0.05) 80vh,  rgba(var(--pri-col), 0.05) 100vh, rgb(30,30,30) 150vh);
   color: white;
 }
 
@@ -15,6 +15,22 @@ svg {
   fill: white;
   box-shadow: rgba(0,0,0,0.1) 0 0 20px 10px;
   background: rgb(23,23,23);
+}
+
+svg text {
+  fill: rgb(200,200,200);
+}
+
+svg line {
+  stroke: rgb(100,100,100);
+}
+
+svg .domain {
+  stroke: rgb(100,100,100);
+}
+
+svg text.axis-label {
+  fill: white;
 }
 
 .separator {

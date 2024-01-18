@@ -17,7 +17,7 @@ body {
   padding: 0;
   font-family: 'JetBrains Mono', monospace;
   min-height: 100vh;
-  background: linear-gradient(180deg, rgb(255,255,255) 50%, rgba(var(--pri-col), 0.25) 100%);
+  background: repeating-linear-gradient(180deg, rgb(255,255,255) 0,  rgb(255,255,255) 30vh, rgba(var(--pri-col), 0.15) 80vh,  rgba(var(--pri-col), 0.15) 100vh, rgb(255,255,255) 150vh);
 }
 
 h1 {
@@ -37,7 +37,7 @@ p {
 }
 
 #dark-toggle-container {
-  position: absolute;
+  position: fixed;
   right:0;
   top:0;
   width:48px;
@@ -79,7 +79,7 @@ p {
   display: flex;
   flex-direction: column;
   width: min-content;
-  margin: 20px auto;
+  margin: 20px auto 40px auto;
   justify-content: center;
 }
 
@@ -97,9 +97,17 @@ svg text {
   font-family: 'JetBrains Mono', monospace;
 }
 
-svg .axis-label {
+svg line {
+  stroke: rgb(180,180,180);
+}
+
+svg .domain {
+  stroke: rgb(180,180,180);
+}
+
+svg text.axis-label {
   fill: black;
-  font-size:14px;
+  font-size: 15px !important;
 }
 
 .separator {

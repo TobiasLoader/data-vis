@@ -1,7 +1,13 @@
-var mode = "light";
+var mode = getCookie('lightDark');
 
-// Toggle Dark mode on/off
-document.getElementById("dark-toggle-container").addEventListener("click", function() {
+if (mode==null){
+  var mode = "light";
+  setCookie('lightDark',mode,28);
+} else if (mode=='dark'){
+  toggleLightDarkCSS();
+}
+
+function toggleLightDarkCSS(){
   const darkCSS = document.getElementById("dark-css");
   darkCSS.disabled = !darkCSS.disabled;
   
@@ -9,11 +15,19 @@ document.getElementById("dark-toggle-container").addEventListener("click", funct
   if (modernDarkCSS!=null) modernDarkCSS.disabled = !modernDarkCSS.disabled;
   
   const toggleImg = document.querySelector("#dark-toggle-img");
+  if (mode=="dark") toggleImg.src = "../../assets/imgs/light-mode.svg";
+  else toggleImg.src = "../../assets/imgs/dark-mode.svg";
+}
+
+// Toggle Dark mode on/off
+document.getElementById("dark-toggle-container").addEventListener("click", function() {  
   if (mode=="light") {
-    toggleImg.src = "../../assets/imgs/light-mode.svg";
     mode = "dark";
+    setCookie('lightDark',mode,28);
   } else {
-    toggleImg.src = "../../assets/imgs/dark-mode.svg";
     mode = "light";
+    setCookie('lightDark',mode,28);
   }
+  
+  toggleLightDarkCSS();
 });
