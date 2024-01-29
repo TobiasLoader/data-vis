@@ -1,0 +1,8 @@
+{
+  "template": {
+    "theme": "default",
+    "data": [],
+    "js": "template.js",
+    "export": "~/Desktop"
+  }
+}

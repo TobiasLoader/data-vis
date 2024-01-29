@@ -26,6 +26,7 @@ function precmd() {
   local_alias launch $shellDir $dataVisDir
   local_alias delete $shellDir $dataVisDir
   local_alias shutdown $shellDir $dataVisDir
+  local_alias export $shellDir $dataVisDir
 }
 ```
 
@@ -37,5 +38,6 @@ function precmd() {
 - `launch [name]`
 - `delete [name]`
 - `shutdown`
+- `export [name] [optional destination]`
 
 You can now run `[COMMAND]` instead of `./shell/[COMMAND].sh`.
