@@ -135,7 +135,16 @@ case $# in
     echo "Export a project – with parameters:"
     echo " - Project name"
     echo " - [Optional destination directory]"
+    echo ""
     echo "Note: if no destination directory supplied then the\n      default location as set in metadata.json is chosen"
+    echo ""
+    echo "Build projects ready for export:"
+    path="$(pwd)/builds"
+    for dir in "$path"/*; do
+      if [ -d "$dir" ]; then
+        echo " - ${dir:t}"
+      fi
+    done
     ;;
   1)
     exportLocation=$(extractProjectExportFromMetadata $1)

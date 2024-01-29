@@ -15,14 +15,21 @@ if [[ -n $projectName ]]; then
   read projectDescription
   
   # Ask for the JavaScript file name
-  echo -n "Enter JS file name (with .js extension): "
+  echo -n "Enter JS file name (with extension .js): "
   read jsFileName
+  if [[ $jsFileName == *.js ]]; then
+    if [[ ! -f "./d3/$jsFileName" ]]; then
+      touch "./d3/$jsFileName"
+    fi
+  else
+    jsFileName="template.js"
+  fi
   
   # Ask for export location
   echo -n "Enter export location (defaults to ~/Desktop): "
   read exportLocation
-  
-  if [ ! -d $exportLocation ]; then
+  expandedExportLocation=$(eval echo $exportLocation)
+  if [[ ! -n $exportLocation ]] || [[ ! -d $expandedExportLocation ]]; then
     exportLocation="~/Desktop"
   fi
   
@@ -30,15 +37,17 @@ if [[ -n $projectName ]]; then
   echo -n "Enter theme choice (default/modern): "
   read themeChoice
   
-  modernCSSLink=""
-  modernDarkCSSLink=""
-  if [ $themeChoice = "modern" ]; then
-    modernCSSLink="<link rel='stylesheet' href='../../assets/css/modern/modern.css'>"
-    modernDarkCSSLink="<link id='modern-dark-css' disabled='true' rel='stylesheet' href='../../assets/css/modern/modern-dark.css'>"
+  customThemes=("modern")
+  # if themeChioce is in the list themeOptions
+  if [[ ${customThemes[(ie)$themeChoice]} -le ${#customThemes} ]]; then
+    # then set the theme css links
+    themeCSSLink="<link rel='stylesheet' href='../../assets/css/$themeChoice/$themeChoice.css'>"
+    themeDarkCSSLink="<link class='dark-css' disabled='true' rel='stylesheet' href='../../assets/css/$themeChoice/$themeChoice-dark.css'>"
   else
+    # otherwise set themeChoice to default
     themeChoice="default"
   fi
-  
+    
   # Create a new directory for the project
   mkdir "builds/$projectName"
   
@@ -53,9 +62,9 @@ if [[ -n $projectName ]]; then
     <title>$projectName</title>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/default/styles.css">
-    $([ -n "$modernCSSLink" ] && echo "$modernCSSLink")
-    <link id="dark-css" disabled="true" rel="stylesheet" href="../../assets/css/default/dark.css">
-    $([ -n "$modernDarkCSSLink" ] && echo "$modernDarkCSSLink")
+    $([[ $themeChoice != "default" ]] && echo "$themeCSSLink")
+    <link class="dark-css" disabled="true" rel="stylesheet" href="../../assets/css/default/dark.css">
+    $([[ $themeChoice != "default" ]] && echo "$themeDarkCSSLink")
     <link rel="stylesheet" href="custom.css">
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="../../assets/js/cookies.js"></script>
