@@ -22,7 +22,7 @@ case $# in
       else
         # otherwise launch python simple server then open build
         echo "[ launching server... ]"
-        python -m SimpleHTTPServer & sleep 2; open "http://localhost:8000/builds/$1"
+        python3 -m http.server & sleep 2; open "http://localhost:8000/builds/$1"
       fi
       if [ $? -eq 0 ]; then
         echo "Project '$1' has been launched successfully."

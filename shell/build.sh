@@ -60,7 +60,7 @@ if [[ -n $projectName ]]; then
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>$projectName</title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/default/styles.css">
     $([[ $themeChoice != "default" ]] && echo "$themeCSSLink")
     <link class="dark-css" disabled="true" rel="stylesheet" href="../../assets/css/default/dark.css">
