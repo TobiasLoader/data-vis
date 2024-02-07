@@ -81,6 +81,7 @@ if [[ -n $projectName ]]; then
     <div id="footer-container">
       <p id="footer">Toby Loader – D3.js $projectName</p>
     </div>
+    <script src="../../assets/js/helper.js"></script>
     <script src="../../d3/$jsFileName"></script>
     <script src="../../assets/js/scripts.js"></script>
   </body>
