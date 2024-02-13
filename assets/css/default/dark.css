@@ -11,6 +11,11 @@ body {
   color: rgb(155,155,155);
 }
 
+.chart-label .menu-dropdown select {
+  background: rgb(0,0,0);
+  color:white;
+}
+
 svg {
   fill: white;
   box-shadow: rgba(0,0,0,0.1) 0 0 20px 10px;
@@ -35,4 +40,12 @@ svg text.axis-label {
 
 .separator {
   border-top: rgb(80, 80, 80) 1px dashed;
+}
+
+#tooltip {
+  background: black;
+}
+
+.fuzzy-tooltip-point {
+  fill:black;
 }

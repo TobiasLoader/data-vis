@@ -87,6 +87,32 @@ p {
   margin: 20px 0;
 }
 
+.chart-label .menu-custom {
+  padding:5px 5px 5px 0;
+  margin-top:10px;
+}
+
+.chart-label .menu-dropdown {
+  display: flex;
+  width:min-content;
+}
+
+.chart-label .menu-dropdown > span {
+  margin-right:10px;
+  line-height: 30px;
+}
+
+.chart-label .menu-custom select {
+  padding:4px;
+  font-family: 'JetBrains Mono', monospace;
+  cursor:pointer;
+  border-radius: 2px;
+}
+
+.chart-label .checkbox-container {
+  font-size: 13px;
+}
+
 svg {
   box-shadow: rgba(0,0,0,0.1) 0 0 20px 5px;
   background: white;
@@ -115,6 +141,16 @@ svg text.axis-label {
   border-top: rgb(80,80,80) 1px dashed;
   margin: 40px auto;
   width: 100%;
+}
+
+#tooltip {
+  position: absolute;
+  display: none;
+  padding:10px;
+  background: white;
+  border:rgb(100,100,100) 1px solid;
+  box-shadow: rgba(0,0,0,0.1) 0 0 20px 5px;
+  font-size: 13px;
 }
 
 #footer {
