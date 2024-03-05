@@ -16,6 +16,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+  font-optical-sizing: auto;
+  font-style: normal;
   min-height: 100vh;
   background: repeating-linear-gradient(180deg, rgb(255,255,255) 0,  rgb(255,255,255) 30vh, rgba(var(--pri-col), 0.15) 80vh,  rgba(var(--pri-col), 0.15) 100vh, rgb(255,255,255) 150vh);
 }
@@ -29,6 +32,13 @@ h3 {
   margin: 0;
   margin-bottom: 5px;
   color: rgb(var(--pri-col));
+}
+
+h4 {
+  font-size:18x;
+  margin: 0;
+  margin-bottom: 3px;
+  font-weight: 600;
 }
 
 p {
